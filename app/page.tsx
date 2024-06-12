@@ -1,13 +1,14 @@
 "use client";
-import Banner from "@/components/banner";
-import Nav from "@/components/nav";
+import Banner from "@/components/layouts/banner";
+import Nav from "@/components/layouts/nav";
 
 export default function Home() {
   return (
     <div>
       <Nav/>
-      <div className="min-h-[3000px]">
+      <div>
         <Banner/>
+
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import Nav from "@/components/nav";
+import Nav from "@/components/layouts/nav";
 
 export default function Services() {
   return (
