@@ -1,13 +1,15 @@
 "use client";
+import Banner from "@/components/banner";
 import Nav from "@/components/nav";
-import Image from "next/image";
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 export default function Home() {
   return (
     <div>
       <Nav/>
-      <div className="bg-black text-white min-h-[3000px]">
-        <h1>test</h1>
+      <div className="min-h-[3000px]">
+        <Banner/>
+        {/* <h1>test</h1> */}
       </div>
     </div>
   );

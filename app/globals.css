@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.diagonal {
+    width: 0;
+    height: 0;
+    border-left: 180vh solid transparent;
+    border-bottom: 80px solid white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
