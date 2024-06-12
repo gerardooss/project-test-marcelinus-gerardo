@@ -13,9 +13,26 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [content, setContent] = useState<Result>();
 
-  const localPage = () => Number(localStorage.getItem("currentPage")) || 1;
-  const localPerPage = () => Number(localStorage.getItem("perPage")) || 10;
-  const localSortBy = () => localStorage.getItem("sortBy") || "published_at";
+  const localPage = () => {
+    if (typeof window !== "undefined") {
+      return Number(localStorage.getItem("currentPage")) || 1;
+    }
+    return 1;
+  };
+
+  const localPerPage = () => {
+    if (typeof window !== "undefined") {
+      return Number(localStorage.getItem("perPage")) || 10;
+    }
+    return 10;
+  };
+
+  const localSortBy = () => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("sortBy") || "published_at";
+    }
+    return "published_at";
+  };
 
   const [currentPage, setCurrentPage] = useState(localPage);
   const [perPage, setPerPage] = useState(localPerPage);
@@ -39,23 +56,22 @@ export default function Home() {
 
   // Save state handler -----------------
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.setItem("currentPage", currentPage.toString());
     }
   }, [currentPage]);
-  
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.setItem("perPage", perPage.toString());
     }
   }, [perPage]);
-  
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.setItem("sortBy", sortBy);
     }
   }, [sortBy]);
-  
 
   // Filter handler -----------------
   const handlePerPage = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -73,7 +89,7 @@ export default function Home() {
         <Banner />
         {isLoading ? (
           <div className="flex min-h-screen items-center justify-center">
-            <img src={'/loading.gif'} alt="Loading" />
+            <img src={"/loading.gif"} alt="Loading" />
           </div>
         ) : (
           <>
@@ -126,7 +142,7 @@ export default function Home() {
           </>
         )}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
