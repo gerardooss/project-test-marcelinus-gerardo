@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Nav />
       <div className="flex items-center justify-center min-h-screen">
-        <h1 className="text-5xl text-zinc-600 font-bold">suitmedia</h1>
+        <h1 className="text-5xl text-zinc-600">suitmedia</h1>
       </div>
     </>
   );

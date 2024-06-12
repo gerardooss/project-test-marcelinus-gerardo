@@ -14,7 +14,7 @@ const Card: React.FC<Result> = ({ data }) => {
           className="bg-white rounded-lg shadow-md overflow-hidden"
         >
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_cC219YXyS44-l3iogAGCMMbS31nD1Hi8Sg&s"
+            src="https://media.istockphoto.com/id/1334737130/photo/handshake-for-the-new-agreement.jpg?s=612x612&w=0&k=20&c=wJvcB4xnQ5U0chNnGbscyuOjXil5hVgBOrio86TpRNk="
             loading="lazy"
             alt={item.title}
             className="w-full h-48 object-cover"

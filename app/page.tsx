@@ -6,6 +6,7 @@ import axios from "axios";
 import Nav from "@/components/layouts/nav";
 import PageButton from "@/components/layouts/pagebutton";
 import Card from "@/components/layouts/card";
+import Footer from "@/components/layouts/footer";
 
 export default function Home() {
   // Consume API -----------------
@@ -28,7 +29,6 @@ export default function Home() {
         const result = await axios.get(`${API}`);
         setContent(result.data);
         setIsLoading(false);
-        console.log(result.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -62,11 +62,12 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <div>
+      <div className="mb-5">
         <Banner />
-
         {isLoading ? (
-          <div>Loading...</div>
+          <div className="flex min-h-screen items-center justify-center">
+            <img src={'/loading.gif'} alt="Loading" />
+          </div>
         ) : (
           <>
             {/* Filter dropdowns ----------------- */}
@@ -107,10 +108,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             {/* API result ----------------- */}
             <Card data={content!!.data} meta={content!!.meta}></Card>
-
             {/* Pagination button ----------------- */}
             <PageButton
               currentPage={currentPage}
@@ -120,6 +119,7 @@ export default function Home() {
           </>
         )}
       </div>
+      <Footer/>
     </div>
   );
 }

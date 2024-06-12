@@ -59,34 +59,34 @@ export default function Nav() {
         <div className="menu flex items-center">
           <ul className="hidden md:flex gap-5">
             <li>
-              <Link href="">Work</Link>
+              <Link className={`py-2 ${pathname === "/work" ? "border-b-2" : "hover:border-b-2"}`} href="/work">
+                Work
+              </Link>
             </li>
             <li>
-              <Link href="">About</Link>
+              <Link className={`py-2 ${pathname === "/about" ? "border-b-2" : "hover:border-b-2"}`} href="/about">
+                About
+              </Link>
             </li>
             <li>
-              <Link
-                className={`py-2 ${
-                  pathname === "/services" ? "border-b-2" : ""
-                }`}
-                href="/services"
-              >
+              <Link className={`py-2 ${pathname === "/services" ? "border-b-2" : "hover:border-b-2"}`} href="/services">
                 Services
               </Link>
             </li>
             <li>
-              <Link
-                className={`py-2 ${pathname === "/" ? "border-b-2" : ""}`}
-                href="/"
-              >
+              <Link className={`py-2 ${pathname === "/" ? "border-b-2" : "hover:border-b-2"}`} href="/" >
                 Ideas
               </Link>
             </li>
             <li>
-              <Link href="">Careers</Link>
+              <Link className={`py-2 ${pathname === "/careers" ? "border-b-2" : "hover:border-b-2"}`} href="/careers">
+                Careers
+              </Link>
             </li>
             <li>
-              <Link href="">Contact</Link>
+              <Link className={`py-2 ${pathname === "/contact" ? "border-b-2" : "hover:border-b-2"}`} href="/contact">
+                Contact
+              </Link>
             </li>
           </ul>
           {/* 
