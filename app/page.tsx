@@ -39,16 +39,23 @@ export default function Home() {
 
   // Save state handler -----------------
   useEffect(() => {
-    localStorage.setItem("currentPage", currentPage.toString());
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("currentPage", currentPage.toString());
+    }
   }, [currentPage]);
-
+  
   useEffect(() => {
-    localStorage.setItem("perPage", perPage.toString());
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("perPage", perPage.toString());
+    }
   }, [perPage]);
-
+  
   useEffect(() => {
-    localStorage.setItem("sortBy", sortBy);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("sortBy", sortBy);
+    }
   }, [sortBy]);
+  
 
   // Filter handler -----------------
   const handlePerPage = (e: React.ChangeEvent<HTMLSelectElement>) => {
