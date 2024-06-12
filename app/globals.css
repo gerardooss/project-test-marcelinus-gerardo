@@ -5,7 +5,7 @@
 .diagonal {
     width: 0;
     height: 0;
-    border-left: 180vh solid transparent;
+    border-left: 190vh solid transparent;
     border-bottom: 80px solid white;
     position: absolute;
     right: 0;

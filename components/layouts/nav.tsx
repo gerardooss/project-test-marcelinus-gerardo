@@ -8,15 +8,12 @@ export default function Nav() {
   const [lastScroll, setLastScroll] = useState(0);
   const [hidden, setHidden] = useState(false);
   const [transparent, setTransparent] = useState(false);
-
   const pathname = usePathname();
 
+  // Setup navbar display -----------------
   const handleScroll = () => {
     const currentScroll = window.scrollY;
 
-    {
-      /* Setup navbar display ----------------- */
-    }
     if (currentScroll === 0) {
       setTransparent(false);
       setHidden(false);
@@ -43,7 +40,7 @@ export default function Nav() {
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         transparent
-          ? "text-white text-opacity-60 bg-orange-600 bg-opacity-50"
+          ? "text-white text-opacity-70 bg-orange-600 bg-opacity-70"
           : "text-white bg-orange-600"
       }`}
     >
@@ -68,10 +65,22 @@ export default function Nav() {
               <Link href="">About</Link>
             </li>
             <li>
-              <Link className={`py-2 ${pathname === "/services" ? "border-b-2" : ""}`} href="/services">Services</Link>
+              <Link
+                className={`py-2 ${
+                  pathname === "/services" ? "border-b-2" : ""
+                }`}
+                href="/services"
+              >
+                Services
+              </Link>
             </li>
             <li>
-              <Link className={`py-2 ${pathname === "/" ? "border-b-2" : ""}`}  href="/">Ideas</Link>
+              <Link
+                className={`py-2 ${pathname === "/" ? "border-b-2" : ""}`}
+                href="/"
+              >
+                Ideas
+              </Link>
             </li>
             <li>
               <Link href="">Careers</Link>
@@ -85,7 +94,7 @@ export default function Nav() {
           (not in the requirements criteria)
           */}
           <button className="md:hidden menu-button">
-            <MenuIcon/>
+            <MenuIcon />
           </button>
         </div>
       </div>
