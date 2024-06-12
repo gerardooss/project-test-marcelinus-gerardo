@@ -1,7 +1,6 @@
 "use client";
 import Banner from "@/components/banner";
 import Nav from "@/components/nav";
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 export default function Home() {
   return (

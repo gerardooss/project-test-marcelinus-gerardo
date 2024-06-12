@@ -48,21 +48,23 @@ export default function Nav() {
     >
       <div className="header flex justify-between py-2 px-4">
         <div>
-          <Image
-            src="/suitmed-logo.png"
-            alt="logo"
-            width="100"
-            height="100"
-            className="mr-2 rounded-sm"
-          />
+          <Link legacyBehavior href="/home" passHref>
+            <Image
+              src="/suitmed-logo.png"
+              alt="logo"
+              width="100"
+              height="100"
+              className="mr-2 rounded-sm"
+            />
+          </Link>
         </div>
         <div className="menu flex items-center">
           <ul className="hidden md:flex gap-5">
-            <Link href="">
-              Work
-            </Link>
             <li>
-              <Link className={`py-2 ${pathname === "/about" ? "border-b-2" : ""}`} href="/about">About</Link>
+              <Link href="">Work</Link>
+            </li>
+            <li>
+              <Link href="">About</Link>
             </li>
             <li>
               <Link className={`py-2 ${pathname === "/services" ? "border-b-2" : ""}`} href="/services">Services</Link>
