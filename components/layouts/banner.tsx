@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 export default function Banner() {
   return (
-    <div>
+    <div className="relative">
       <div className="flex items-center justify-center h-screen bg-fixed bg-cover bg-parallax relative">
         <div className="text-center z-10">
           <h1 className="text-5xl font-bold text-white mb-1">Ideas</h1>
