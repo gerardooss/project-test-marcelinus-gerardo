@@ -9,7 +9,6 @@ export default function Home() {
       <Nav/>
       <div className="min-h-[3000px]">
         <Banner/>
-        {/* <h1>test</h1> */}
       </div>
     </div>
   );
